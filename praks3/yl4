@@ -1,0 +1,20 @@
+#/bin/bash
+#busside arvu arvutamine
+
+echo -n "sisesta reisijate arv: "
+read reisijad
+ 
+echo -n "kohtade arv ühes bussis: "
+read kohad
+
+bussid=$(($reisijad / $kohad ))
+
+echo "Täis busside arv on $bussid"
+
+maha_jäänud=$(( $reisijad % $kohad ))
+
+if test $maha_jäänud -gt 0
+then
+	bussid=$(($bussid + 1))
+fi
+echo "Kokku on vaja $bussid taisbussi"
