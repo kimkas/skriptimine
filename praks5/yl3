@@ -1,8 +1,7 @@
 
 #!/bin/bash
 
-echo -e "Sisesta aja väärtus: \c"
-read aeg
+aeg=$( date +"%H" )
 
 if [ $aeg -ge 6 -a $aeg -lt 12 ]; then
 	echo "Tere hommikust!"
